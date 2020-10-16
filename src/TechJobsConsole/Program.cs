@@ -121,13 +121,17 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            foreach (Dictionary<string, string>job in someJobs) {
-                Console.WriteLine("**********");
-                foreach (string aKey in job.Keys)
+            if (someJobs.Count == 0)
+            {
+                foreach (Dictionary<string, string> job in someJobs)
                 {
-                    Console.WriteLine(aKey + ": " + job[aKey]);
+                    Console.WriteLine("**********");
+                    foreach (string aKey in job.Keys)
+                    {
+                        Console.WriteLine(aKey + ": " + job[aKey]);
+                    }
+                    Console.WriteLine("**********\n");
                 }
-                Console.WriteLine("**********\n");
             }
         }
     }
